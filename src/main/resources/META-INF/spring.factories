@@ -1,0 +1,4 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.mybatisPlus.autoconfigure.MybatisPlusAutoConfiguration,\
+com.mybatisPlus.controller.GeneratorController

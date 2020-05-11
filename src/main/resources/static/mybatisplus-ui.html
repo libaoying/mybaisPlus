@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mybatisPlus-UI</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src="jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<table id="mytable" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">
+    <caption></caption>
+    <tr>
+        <th scope="col" abbr="Dual 1.8">表名</th>
+        <th scope="col" abbr="Dual 2">详情</th>
+        <th scope="col" abbr="Dual 2.5">操作</th>
+    </tr>
+</table>
+<script>
+    const TR = "<tr><td>@1</td><td>详情</td><td><button id='@2' onclick=\"generator(this)\">代码生成</button></td></tr>"
+    const path=  window.location.pathname.replace("/mybatisplus-ui.html","");
+    $(function () {
+        tableList();
+    });
+
+    function tableList() {
+        $.ajax({
+            type: "GET",
+            url: path+"/table/list",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            async: false,
+            success: function (result) {
+                console.log(result);
+                if (result.code!==0){
+                  alert(result.message);
+                  return;
+                }
+                let data=result.data;
+                let $table_ul = $('#mytable');//取得table-ul元素
+                for (let i = 0; i < data.length; i++) {
+                    let temp_tr = TR.replace("@1", data[i]).replace("@2", data[i]);
+                    $table_ul.append($(temp_tr))
+                }
+            }
+        });
+    }
+
+    /**
+     * 生成代码请求
+     * @param opt
+     */
+    function generator(e) {
+        console.log(e)
+        $.ajax({
+            type: "get",
+            url: path+"/table/generator/" + e.id,
+            async: false,
+            success: function (result) {
+                alert(result.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>
