@@ -41,8 +41,8 @@ public class GeneratorController {
         }
     }
 
-    @GetMapping({"/deatil/{tableName}"})
-    public R<List<TableInfo>> deatil(@PathVariable String tableName) {
+    @GetMapping({"/details/{tableName}"})
+    public R<List<TableInfo>> details(@PathVariable String tableName) {
         List<TableInfo> tableInfos = null;
         try {
             tableInfos = this.generatorService.tableDetail(tableName);

@@ -38,6 +38,21 @@ public class StringUtils extends org.springframework.util.StringUtils {
         return toString;
     }
 
+    /**
+     * 首字母小写
+     * @param str
+     * @return
+     */
+    public static String initcap(String str) {
+        if (str == null || " ".equals(str)) {
+            return str;
+        }
+        if (str.length() > 1) {
+            return str.substring(0, 1).toLowerCase() + str.substring(1);
+        }
+        return str.toLowerCase();
+    }
+
     public static final char UNDERLINE = '_';
 
 

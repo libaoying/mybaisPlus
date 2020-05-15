@@ -67,5 +67,19 @@ th.specalt {
     font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
     color: #797268;
 }
+.tipsSpan{
+    position: relative;
+}
+.tips{
+    visibility: hidden;
+    position: absolute;
+    background: #FFFFBB;
+    border: 1px solid #000;
+    display: inline;
+    min-width: 130px;
+    min-height: 24px;
+    left: 20px;
+    top:18px;
+}
 /*---------for IE 5.x bug*/
 html>body td{ font-size:11px;}

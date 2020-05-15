@@ -22,6 +22,7 @@ public class JDBCUtils {
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+            throw  new RuntimeException("数据库链接失败");
         }
         return conn;
     }
@@ -59,6 +60,7 @@ public class JDBCUtils {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException("查询失败");
         } finally {
             close(conn, preparedStatement, resultSet);
         }
