@@ -1,5 +1,8 @@
 package com.mybatisPlus.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /***
  * @ClassName StringUtils
  * @Description: StringUtils.java
@@ -51,6 +54,16 @@ public class StringUtils extends org.springframework.util.StringUtils {
             return str.substring(0, 1).toLowerCase() + str.substring(1);
         }
         return str.toLowerCase();
+    }
+
+    /**
+     * 时间格式化
+     * @param date
+     * @return
+     */
+    public static String date2Str(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        return sdf.format(date);
     }
 
     public static final char UNDERLINE = '_';

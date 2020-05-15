@@ -15,7 +15,7 @@ import java.util.Date;
 public class ControllerUtils {
 
     public static String getControllerJava(MybatisPlusProperties properties,String tableName) {
-        String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+        String date = StringUtils.date2Str(new Date());
         String basePackage = properties.getBasePackage();
         String className = StringUtils.underlineToCamel(tableName);
         String classname = StringUtils.initcap(className);

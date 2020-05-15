@@ -15,7 +15,7 @@ import java.util.Date;
 public class ServiceImplUtils {
 
     public static String getServiceImplJava(MybatisPlusProperties properties, String tableName) {
-        String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+        String date = StringUtils.date2Str(new Date());
         String basePackage = properties.getBasePackage();
         String className = StringUtils.underlineToCamel(tableName);
         String classname = StringUtils.initcap(className);
