@@ -1,5 +1,5 @@
-const TR = "<tr><td>@1</td><td><a id='@2' href=\"/table.html?table=@table\">详情</a></td><td><button id='@3' onclick=\"generator(this)\">代码生成</button></td></tr>"
 const path=  window.location.pathname.replace("/mybatisplus-ui.html","");
+const TR = "<tr><td>@1</td><td><a id='@2' href='"+path+"/table.html?table=@table' >详情</a></td><td><button id='@3' onclick=\"generator(this)\">代码生成</button></td></tr>"
 $(function () {
     tableList();
 });
