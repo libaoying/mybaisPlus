@@ -32,7 +32,7 @@ public class ServiceImplUtils {
                 .append("import ").append(basePackage).append(".dao.").append(className)
                 .append("Mapper;").append("\n\n")
                 .append("/***\n")
-                .append(" * Created by Mybatis Generator on ").append(date).append("\n")
+                .append(" *@author Created by Mybatis Generator on ").append(date).append("\n")
                 .append(" */\n")
                 .append("@Service\n")
                 .append("public class ").append(className)

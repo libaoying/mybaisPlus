@@ -33,7 +33,7 @@ public class ControllerUtils {
                 .append("import ").append(basePackage).append(".service.").append(className)
                 .append("Service;").append("\n\n")
                 .append("/***\n")
-                .append(" * Created by Mybatis Generator on ").append(date).append("\n")
+                .append(" *@author Created by Mybatis Generator on ").append(date).append("\n")
                 .append(" */\n")
                 .append("@RestController").append("\n")
                 .append("@RequestMapping(\"/").append(classname).append("\")").append("\n")

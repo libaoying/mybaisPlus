@@ -27,7 +27,7 @@ public class ServiceUtils {
         StringBuilder sb=new StringBuilder();
         sb.append("package ").append(basePackage).append(".service;\n\n")
                 .append("/***\n")
-                .append(" * Created by Mybatis Generator on on ").append(date).append("\n")
+                .append(" *@author Created by Mybatis Generator on on ").append(date).append("\n")
                 .append(" */\n")
                 .append("public interface ")
                 .append(className)
