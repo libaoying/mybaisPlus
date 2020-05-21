@@ -59,7 +59,7 @@ public class MyCommentGenerator extends DefaultCommentGenerator {
         List<Parameter> parameters = method.getParameters();
         FullyQualifiedJavaType returnType = method.getReturnType();
         method.addJavaDocLine("/**");
-        method.addJavaDocLine(" * " + ANNOTATION.get(name));
+        method.addJavaDocLine(" * " + ANNOTATION.getOrDefault(name,name));
         for (Parameter param : parameters) {
             String paramName = param.getName();
             method.addJavaDocLine(" * @param " + paramName);
